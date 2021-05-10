@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
-//import Chart from 'react-apexcharts';
+import Chart from 'react-apexcharts';
 import { SaleSuccess } from 'types/sale';
 import { BASE_URL } from 'utils/requests';
 import { round } from 'utils/format';
@@ -14,11 +14,11 @@ type SeriesData = {
 
 type ChartData = {
     labels: {
-        categories: string[];   
+        categories: string[];
     };
-    series: SeriesData[]; 
+    series: SeriesData[];
 }
-    
+
 const BarChart = () => {
 
     const [chartData, setChartData] = useState<ChartData>({
@@ -28,7 +28,7 @@ const BarChart = () => {
         series: [
             {
                 name: "",
-                data: []                   
+                data: []
             }
         ]
     });
@@ -47,41 +47,41 @@ const BarChart = () => {
                     series: [
                         {
                             name: "% Success",
-                            data: mySeries                   
+                            data: mySeries
                         }
                     ]
                 });
             });
     }, []);
 
-  //  const options = {
-    //    plotOptions: {
-        //    bar: {
-          //      horizontal: true,
-         //   }
-       // },
-   // };
-    
-   // const mockData = {
-     //   labels: {
-       //     categories: ['Anakin', 'Barry Allen', 'Kal-El', 'Logan', 'Padmé']
-       // },
-        //series: [
-          //  {
-            //    name: "% Sucesso",
-              //  data: [43.6, 67.1, 67.7, 45.6, 71.1]                   
-            //}
-       // ]
-   // };
+    const options = {
+        plotOptions: {
+            bar: {
+                horizontal: true,
+            }
+        },
+    };
 
-    //return (
-      //  <Chart
-        //    options={{ ...options, xaxis: chartData.labels}}
-          //  series={chartData.series}
-            //type="bar"
-            //height="240"    
-       // />
-   // );
+    // const mockData = {
+    //   labels: {
+    //     categories: ['Anakin', 'Barry Allen', 'Kal-El', 'Logan', 'Padmé']
+    // },
+    //series: [
+    //  {
+    //    name: "% Sucesso",
+    //  data: [43.6, 67.1, 67.7, 45.6, 71.1]                   
+    //}
+    // ]
+    // };
+
+    return (
+        <Chart
+            options={{ ...options, xaxis: chartData.labels }}
+            series={chartData.series}
+            type="bar"
+            height="240"
+        />
+    );
 }
 
 export default BarChart;
