@@ -8,10 +8,10 @@ function Home() {
             <NavBar />
             <div className="container">
                 <div className="jumbotron">
-                    <h1 className="display-4">DSVendas</h1>
-                    <p className="lead">Analise o desempenho das suas vendas por diferentes perspectivas</p>
+                    <h1 className="display-4">Chambertran's Sales Feedback</h1>
+                    <p className="lead">Take a look at yours sales results</p>
                     <hr />
-                    <p>Esta aplicação consiste em exibir um dashboard a partir de dados fornecidos por um back end construído com Spring Boot.</p>
+                    <p>This app is a fictition sales results of the company Chambertran Solutions and intends for programming training only. It shows a dashboard that fatches data from a back end developed with Java and Spring Boot.</p>
                     <Link className="btn btn-primary btn-lg" to="/dashboard">
                         Sales Dashboard
                     </Link>
